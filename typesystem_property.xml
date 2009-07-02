@@ -1,0 +1,64 @@
+<typesystem package="com.trolltech.solutions.qtpropertybrowser" default-superclass="com.trolltech.qt.QtJambiObject">
+    <load-typesystem name=":/trolltech/generator/typesystem_core.txt" generate="no"/>
+    <load-typesystem name=":/trolltech/generator/typesystem_gui.txt" generate="no"/>
+    <load-typesystem name=":/trolltech/generator/typesystem_sql.txt" generate="no"/>
+    <load-typesystem name=":/trolltech/generator/typesystem_opengl.txt" generate="no"/>
+    <load-typesystem name=":/trolltech/generator/typesystem_svg.txt" generate="no"/>
+    <load-typesystem name=":/trolltech/generator/typesystem_network.txt" generate="no"/>
+    <load-typesystem name=":/trolltech/generator/typesystem_xml.txt" generate="no"/>
+    <load-typesystem name=":/trolltech/generator/typesystem_xmlpatterns.txt" generate="no"/>
+    <load-typesystem name=":/trolltech/generator/typesystem_webkit.txt" generate="no"/>
+    <load-typesystem name=":/trolltech/generator/typesystem_phonon.txt" generate="no"/>
+    
+    //<template name="from_nativepointer_to_value_type"> public final %RETURN_TYPE% %FUNCTION_NAME%() { return %RETURN_TYPE%.fromNativePointer(%ORIGINAL_FUNCTION_NAME%()); } </template>
+    
+    <enum-type name="QtTreePropertyBrowser::ResizeMode"/>
+    
+    <object-type name="QtAbstractPropertyBrowser" polymorphic-base="yes">
+   	 <modify-function signature="properties()const" rename="browserProperties"/>
+    </object-type>
+    <object-type name="QtTreePropertyBrowser"/>
+    <object-type name="QtButtonPropertyBrowser"/>
+    <object-type name="QtGroupBoxPropertyBrowser"/>
+    
+    
+    <object-type name="QtAbstractPropertyManager" polymorphic-base="yes">
+   	 <modify-function signature="properties()const" rename="browserProperties"/>
+    </object-type>
+    <object-type name="QtIntPropertyManager"/>
+    <object-type name="QtDoublePropertyManager"/>
+    <object-type name="QtBoolPropertyManager"/>
+    <object-type name="QtStringPropertyManager"/>
+    <object-type name="QtDatePropertyManager"/>
+    <object-type name="QtDateTimePropertyManager"/>
+    <object-type name="QtTimePropertyManager"/>
+    <object-type name="QtEnumPropertyManager"/>
+    <object-type name="QtVariantPropertyManager"/>
+    <object-type name="QtColorPropertyManager"/>
+    <object-type name="QtFlagPropertyManager"/>
+    <object-type name="QtFontPropertyManager"/>
+    <object-type name="QtGroupPropertyManager"/>
+    
+    
+    <object-type name="QtAbstractEditorFactoryBase" polymorphic-base="yes">
+        <modify-function signature="breakConnection(QtAbstractPropertyManager*)" remove="all"/>
+        <modify-function signature="QtAbstractEditorFactoryBase(QObject*)" remove="all"/>
+    </object-type>
+    <object-type name="QtCheckBoxFactory" default-superclass="com.trolltech.solutions.qtpropertybrowser.QtAbstractEditorFactoryBase"/>
+    <object-type name="QtSpinBoxFactory" default-superclass="com.trolltech.solutions.qtpropertybrowser.QtAbstractEditorFactoryBase"/>
+    <object-type name="QtDoubleSpinBoxFactory" default-superclass="com.trolltech.solutions.qtpropertybrowser.QtAbstractEditorFactoryBase"/>
+    <object-type name="QtScrollBarFactory" default-superclass="com.trolltech.solutions.qtpropertybrowser.QtAbstractEditorFactoryBase"/>
+    <object-type name="QtSliderFactory" default-superclass="com.trolltech.solutions.qtpropertybrowser.QtAbstractEditorFactoryBase"/>
+    <object-type name="QtLineEditFactory" default-superclass="com.trolltech.solutions.qtpropertybrowser.QtAbstractEditorFactoryBase"/>
+    <object-type name="QtDateEditFactory" default-superclass="com.trolltech.solutions.qtpropertybrowser.QtAbstractEditorFactoryBase"/>
+    <object-type name="QtDateTimeEditFactory" default-superclass="com.trolltech.solutions.qtpropertybrowser.QtAbstractEditorFactoryBase"/>
+    <object-type name="QtTimeEditFactory" default-superclass="com.trolltech.solutions.qtpropertybrowser.QtAbstractEditorFactoryBase"/>
+    <object-type name="QtEnumEditorFactory" default-superclass="com.trolltech.solutions.qtpropertybrowser.QtAbstractEditorFactoryBase"/>
+    <object-type name="QtVariantEditorFactory" default-superclass="com.trolltech.solutions.qtpropertybrowser.QtAbstractEditorFactoryBase"/>
+    <object-type name="QtColorEditorFactory" default-superclass="com.trolltech.solutions.qtpropertybrowser.QtAbstractEditorFactoryBase"/>
+    <object-type name="QtFontEditorFactory" default-superclass="com.trolltech.solutions.qtpropertybrowser.QtAbstractEditorFactoryBase"/>
+    
+    <object-type name="QtBrowserItem"/>
+    <object-type name="QtProperty"/>
+    <object-type name="QtVariantProperty"/>
+</typesystem>
